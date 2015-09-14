@@ -1,7 +1,7 @@
 # Introduction to Object Oriented Programming
 
 ### What is OOP?
-- A style of programming (as opposed to functional programming or procedural programming)
+- A style of programming (some others are functional programming and procedural programming)
 - A way of creating code that models the complex of the real world, as objects
 - In OOP, we create objects that hold data and pass messages to each other by calling methods
 - ruby is an object oriented language and has built in tools to help you create object oriented code
