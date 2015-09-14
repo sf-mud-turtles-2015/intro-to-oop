@@ -69,7 +69,7 @@ p small_teapot.get_capacity_in_cups
 - Example, layers of abstraction in a computer
 - Example, a radio
 
-### Tools of encapsulation: Public vs private methods
+### Tools of encapsulation in ruby: Public vs private methods
 - Public methods are for use by the clients of the code.  Methods defined in a class are public by default.  The public methods of a class comprise that class's interface, or API.
 - Public methods are the only methods that can be called outside of a class's definition
 - Private methods are for use only within the object
