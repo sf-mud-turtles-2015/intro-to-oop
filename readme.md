@@ -60,11 +60,18 @@ p small_teapot.get_capacity_in_cups
 
 ### Abstraction and encapsulation
 - Abstraction means that we are modeling relevant aspects of a real world system that make sense
-- Encapsulation means that we are hiding implementation details and private state from the external clients of our code
+- Encapsulation means that we are hiding information like implementation details and private state from the external clients of our code
+- These concepts are fundamental!  They allow us to: 
+    - reason about a problem domain without needing to think about about concerns outside the domain
+    - divide up responsibilities between different pieces of code in a system
+    - build reusable components that other people can understand
+    - separate what an object does from how it does it, which makes it easier to change code over time
+- Example, layers of abstraction in a computer
+- Example, a radio
 
-
-### Public vs Private
-- Public methods are for use
+### Public vs private methods
+- Public methods are for use by the clients of the code.  Methods defined in a class are public by default.  The public methods of a class comprise that class's interface, or API.
+- Public methods are the only methods that can be called outside of a class's definition
 - Private methods are for use only within the object
 - If you define methods in the `private` zone of a class, the ruby interpreter will enforce this and throw an error if there is an attempt to call a private method outside the class (What is the error?)
 
