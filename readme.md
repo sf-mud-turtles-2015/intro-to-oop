@@ -133,5 +133,3 @@ zojirushi.current_temperature
 - What public interface does this water boiler expose?
 - What implementation details does it hide under the hood?
 - What assumptions are encoded in this water boiler?
-
-### OOP problem solving case study
