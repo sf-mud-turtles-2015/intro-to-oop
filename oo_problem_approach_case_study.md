@@ -5,11 +5,16 @@ We're writing some software to help our friend Lynne organize the enthusiastic v
 Lynne's been using a spreadsheet to keep track of what the jobs are, when these jobs need to be done, and who's signed up for what job and time slot.  Now she would like us to create an app that will let her set up the jobs, then have volunteers sign up for the 3 time slots that work for them.  Then Lynne can review the list of volunteers signed up for each job at each time slot.
 
 ### User Stories
-- As a coordinator, I need to define the different kinds of volunteering jobs.
-- As a coordinator, I need to define the shifts when each volunteering job is to be done.
-- As a volunteer, I need to see a list of all the available jobs and pick one that I can perform.
-- As a volunteer, I need to sign up for 3 shifts of a particular job.
-- As a coordinator, I need to see which volunteers are signed up for jobs and shifts.
+- As a coordinator, I would like to create jobs
+- As a coordinator, I would like to see a list of the jobs
+- As a coordinator, I would like to see a list of the volunteers
+- As a coordinator, I would like to see the schedule
+
+- As a volunteer, I would like see what jobs are available
+- As a volunteer, I would like to see the time slots for these jobs
+- As a volunteer, I would like to sign up for a job and 3 time slots
+- As a volunteer, I would like to see the job and time slots I
+am signed up for
 
 ### Nouns and Verbs
 - nouns: jobs, shifts, volunteers
@@ -18,10 +23,10 @@ Lynne's been using a spreadsheet to keep track of what the jobs are, when these 
 ### Sketching the Objects
 - Job
   - Attributes: name, shifts
-  - Methods:
+  - Methods: list_shifts
 - Volunteer
   - Attributes: name, job, shifts
-  - Methods: sign_up
+  - Methods: sign_up, list_my_schedule
 - Shift
   - Attributes: time
   - Methods:
