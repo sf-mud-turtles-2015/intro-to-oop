@@ -120,6 +120,15 @@ class ElectricWaterBoiler
             puts "Turning off the heating coil ..."
         end
 end
+
+zojirushi = ElectricWaterBoiler.new
+zojirushi.boil
+
+# The lines below will throw errors
+zojirushi.turn_on_heating_coil
+zojirushi.fill
+zojirushi.heat_water_by_1_degree
+zojirushi.current_temperature
 ```
 - What public interface does this water boiler expose?
 - What implementation details does it hide under the hood?
