@@ -10,34 +10,34 @@
 - A class is ruby's OO fundamental building block.  It is a template for an object.  
 - `class` keyword
 ```ruby
-class Thingie
+class Teapot
 end
 ```
 - Once we define a class, we can create many objects with this template.  These objects are created at runtime and called instances.
 - `new` keyword
 ```ruby
-class Thingie
+class Teapot
 end
 
-an_instance_of_a_thingie = Thingie.new
+an_instance_of_a_teapot = Teapot.new
 ```
 - A constructor is a special method that ruby calls under the hood when the `new` keyword is used, and in the constructor we set up the state for an instance of the class.
 - `initialize` keyword
 ```ruby 
-class Thingie
+class Teapot
 
     def initialize
-        puts "Setting up the state for this thingie"
+        puts "Setting up the state for this teapot"
     end
 
 end
 
-Thingie.new
+Teapot.new
 ```
 
 ### State and behavior
 - State, data, attributes, or properties of objects are represented as instance variables.  Instance variables of a class are only accessible indirectly, through methods
-- Behavior, or things and object can do, are represented as methods
+- Behavior, or stuff and object can do, are represented as methods
 - State as nouns, behavior as verbs
 - We can think of calling a method on an object can be thought of as sending a message to an object
 ```ruby
@@ -73,21 +73,56 @@ p small_teapot.get_capacity_in_cups
 - Public methods are for use by the clients of the code.  Methods defined in a class are public by default.  The public methods of a class comprise that class's interface, or API.
 - Public methods are the only methods that can be called outside of a class's definition
 - Private methods are for use only within the object
-- If you define methods in the `private` zone of a class, the ruby interpreter will enforce this restriction and throw an error if there is an attempt to call a private method outside the class, such as `NoMethodError: private method `method' called for #<Object:0x007ff964464c80>
+- If you define methods in the `private` zone of a class, the ruby interpreter will enforce this restriction and throw an error if there is an attempt to call a private method outside the class, an error like `NoMethodError: private method `some_method' called for #<SomeObject:0x007ff964464c80>
 ```ruby
-class Thingie
+class ElectricWaterBoiler
+    BOILING_POINT_OF_WATER_F = 212
 
     def initialize
-        cant_touch_this
+        @water_level = 0
+        @current_temperature = 0
+    end
+    
+    def boil
+        fill
+        turn_on_heating_coil
+        while current_temperature < BOILING_POINT_OF_WATER_F
+            heat_water_by_1_degree
+        end
+        turn_off_heating_coil
     end
     
     private
     
-    def cant_touch_this
-        p "Stop, Hammer Time!"
-    end
+        def fill            
+            # Code that fills the water boiler with water
+            @water_level = 10
+            puts "Filling the water boiler ..."
+        end
+        
+        def current_temperature
+            # Code that measures the current water temperature would go here
+            @current_temperature
+        end
+        
+        def heat_water_by_1_degree
+            # Increase the heat of the water by 1 degree F
+            @current_temperature += 1
+        end
+        
+        def turn_on_heating_coil
+            # Code that turns on the heating coil
+            puts "Turning on the heating coil ..."
+        end
+        
+        def turn_off_heating_coil
+            # Code that turns off the heating coil
+            puts "Turning off the heating coil ..."
+        end
 end
-
-thing = Thingie.new
-thing.cant_touch_this
 ```
+- What public interface does this water boiler expose?
+- What implementation details does it hide under the hood?
+- What assumptions are encoded in this water boiler?
+
+### OOP problem solving case study
