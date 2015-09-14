@@ -73,7 +73,7 @@ p small_teapot.get_capacity_in_cups
 - Public methods are for use by the clients of the code.  Methods defined in a class are public by default.  The public methods of a class comprise that class's interface, or API.
 - Public methods are the only methods that can be called outside of a class's definition
 - Private methods are for use only within the object
-- If you define methods in the `private` zone of a class, the ruby interpreter will enforce this restriction and throw an error if there is an attempt to call a private method outside the class, an error like `NoMethodError: private method `some_method' called for #<SomeObject:0x007ff964464c80>
+- If you define methods in the `private` zone of a class, the ruby interpreter will enforce this restriction and throw an error if there is an attempt to call a private method outside the class, an error like `NoMethodError: private method 'some_method' called for #<SomeObject:0x007ff964464c80>`
 ```ruby
 class ElectricWaterBoiler
     BOILING_POINT_OF_WATER_F = 212
