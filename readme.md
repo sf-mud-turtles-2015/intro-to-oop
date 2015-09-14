@@ -3,7 +3,7 @@
 ### What is OOP?
 - A style of programming (as opposed to functional programming or procedural programming)
 - A way of creating code that models the complex of the real world, as objects
-- In OOP, we create objects that hold data and communicate with other by calling methods
+- In OOP, we create objects that hold data and pass messages to each other by calling methods
 - ruby is an object oriented language and has built in tools to help you create object oriented code
 
 ### Defining and insantiating objects in ruby
@@ -39,7 +39,7 @@ Thingie.new
 - State, data, attributes, or properties of objects are represented as instance variables.  Instance variables of a class are only accessible indirectly, through methods
 - Behavior, or things and object can do, are represented as methods
 - State as nouns, behavior as verbs
-- Calling a method on an object can be thought of as sending a message to an object
+- We can think of calling a method on an object can be thought of as sending a message to an object
 ```ruby
 class Teapot
     def initialize capacity_in_cups
@@ -65,14 +65,29 @@ p small_teapot.get_capacity_in_cups
     - reason about a problem domain without needing to think about about concerns outside the domain
     - divide up responsibilities between different pieces of code in a system
     - build reusable components that other people can understand
-    - separate what an object does from how it does it, which makes it easier to change code over time
+    - separate what an object does from how it does it, which makes it easier to maintain over time
 - Example, layers of abstraction in a computer
 - Example, a radio
 
-### Public vs private methods
+### Tools of encapsulation: Public vs private methods
 - Public methods are for use by the clients of the code.  Methods defined in a class are public by default.  The public methods of a class comprise that class's interface, or API.
 - Public methods are the only methods that can be called outside of a class's definition
 - Private methods are for use only within the object
-- If you define methods in the `private` zone of a class, the ruby interpreter will enforce this and throw an error if there is an attempt to call a private method outside the class (What is the error?)
+- If you define methods in the `private` zone of a class, the ruby interpreter will enforce this restriction and throw an error if there is an attempt to call a private method outside the class, such as `NoMethodError: private method `method' called for #<Object:0x007ff964464c80>
+```ruby
+class Thingie
 
-### Resources
+    def initialize
+        cant_touch_this
+    end
+    
+    private
+    
+    def cant_touch_this
+        p "Stop, Hammer Time!"
+    end
+end
+
+thing = Thingie.new
+thing.cant_touch_this
+```
