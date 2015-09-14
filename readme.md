@@ -35,15 +35,33 @@ end
 Thingie.new
 ```
 
+### State and behavior
+- State, data, attributes, or properties of objects are represented as instance variables.  Instance variables of a class are only accessible indirectly, through methods
+- Behavior, or things and object can do, are represented as methods
+- State as nouns, behavior as verbs
+- Calling a method on an object can be thought of as sending a message to an object
+```ruby
+class Teapot
+    def initialize capacity_in_cups
+        @capacity_in_cups = capacity_in_cups
+    end
+
+    def get_capacity_in_cups
+        @capacity_in_cups
+    end
+end
+
+big_teapot = Teapot.new 10
+p big_teapot.get_capacity_in_cups
+
+small_teapot = Teapot.new 4
+p small_teapot.get_capacity_in_cups
+```
+
 ### Abstraction and encapsulation
 - Abstraction means that we are modeling relevant aspects of a real world system that make sense
 - Encapsulation means that we are hiding implementation details and private state from the external clients of our code
 
-### State and behavior
-- State, data, attributes, or properties of objects are represented as instance variables
-- Behavior, or things and object can do, are represented as methods
-- State as nouns, behavior as verbs
-- Calling a method on an object can be thought of as sending a message to an object
 
 ### Public vs Private
 - Public methods are for use
